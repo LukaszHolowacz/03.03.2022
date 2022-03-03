@@ -4,11 +4,14 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val zamow = findViewById<TextView>(R.id.zamow)
 
         //pizze
         val margherita = findViewById<CheckBox>(R.id.margheritacb)
@@ -25,50 +28,49 @@ class MainActivity : AppCompatActivity() {
         val twysp = findViewById<CheckBox>(R.id.twyspcb)
 
         findViewById<Button>(R.id.zamow).setOnClickListener {
-            val result = StringBuilder()
             var cena: Int = 0
 
             if(margherita.isChecked){
-                result.append("\nMargherita 30zł")
+                zamow.append("\nMargherita 30zł")
                 cena += 30
             }
-            if(pepperoni.isChecked){
-                result.append("\nPepperoni 35zł")
+            else if(pepperoni.isChecked){
+                zamow.append("\nPepperoni 35zł")
                 cena += 35
             }
-            if(capricciosa.isChecked){
-                result.append("\nCapriciossa 35zł")
+            else if(capricciosa.isChecked){
+                zamow.append("\nCapriciossa 35zł")
                 cena += 35
             }
-            if(diavola.isChecked){
-                result.append("\nDiavola 35zł")
+            else if(diavola.isChecked){
+                zamow.append("\nDiavola 35zł")
                 cena += 35
             }
-            if(vege.isChecked){
-                result.append("\nPepperoni 40zł")
+            else if(vege.isChecked){
+                zamow.append("\nPepperoni 40zł")
                 cena += 40
             }
-            if(pomidorowy.isChecked){
-                result.append("\nSos Pomidorowy 2zł")
+            else if(pomidorowy.isChecked){
+                zamow.append("\nSos Pomidorowy 2zł")
                 cena += 2
             }
-            if(czosnkowy.isChecked){
-                result.append("\nSos Czosnkowy 2zł")
+            else if(czosnkowy.isChecked){
+                zamow.append("\nSos Czosnkowy 2zł")
                 cena += 2
             }
-            if(ostry.isChecked){
-                result.append("\nSos ostry 2zł")
+            else if(ostry.isChecked){
+                zamow.append("\nSos ostry 2zł")
                 cena += 2
             }
-            if(lagodny.isChecked){
-                result.append("\nSos Łagodny 2zł")
+            else if(lagodny.isChecked){
+                zamow.append("\nSos Łagodny 2zł")
                 cena += 2
             }
-            if(twysp.isChecked){
-                result.append("\nSos 100 Wysp 2zł")
+            else if(twysp.isChecked){
+                zamow.append("\nSos 100 Wysp 2zł")
                 cena += 2
             }
-            result.append("\nCena: " + cena + "zł")
+            zamow.append("\n\nCena: " + cena + "zł")
         }
     }
 }

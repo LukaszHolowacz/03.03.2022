@@ -25,21 +25,50 @@ class MainActivity : AppCompatActivity() {
         val twysp = findViewById<CheckBox>(R.id.twyspcb)
 
         findViewById<Button>(R.id.zamow).setOnClickListener {
-            if(margherita.isChecked){
+            val result = StringBuilder()
+            var cena: Int = 0
 
+            if(margherita.isChecked){
+                result.append("\nMargherita 30zł")
+                cena += 30
             }
             if(pepperoni.isChecked){
-
+                result.append("\nPepperoni 35zł")
+                cena += 35
             }
             if(capricciosa.isChecked){
-
+                result.append("\nCapriciossa 35zł")
+                cena += 35
             }
             if(diavola.isChecked){
-
+                result.append("\nDiavola 35zł")
+                cena += 35
             }
             if(vege.isChecked){
-
+                result.append("\nPepperoni 40zł")
+                cena += 40
             }
+            if(pomidorowy.isChecked){
+                result.append("\nSos Pomidorowy 2zł")
+                cena += 2
+            }
+            if(czosnkowy.isChecked){
+                result.append("\nSos Czosnkowy 2zł")
+                cena += 2
+            }
+            if(ostry.isChecked){
+                result.append("\nSos ostry 2zł")
+                cena += 2
+            }
+            if(lagodny.isChecked){
+                result.append("\nSos Łagodny 2zł")
+                cena += 2
+            }
+            if(twysp.isChecked){
+                result.append("\nSos 100 Wysp 2zł")
+                cena += 2
+            }
+            result.append("\nCena: " + cena + "zł")
         }
     }
 }
